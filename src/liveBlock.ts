@@ -11,7 +11,6 @@ import { maybeCapiDate } from './capi';
 
 type LiveBlock = {
     id: string;
-    isKeyEvent: boolean;
     title: Option<string>;
     firstPublished: Option<Date>;
     lastModified: Option<Date>;
@@ -24,7 +23,6 @@ type LiveBlock = {
 const parse = (block: Block): LiveBlock =>
     ({
         id: block.id,
-        isKeyEvent: block?.attributes?.keyEvent ?? false,
         title: fromNullable(block?.title),
         firstPublished: maybeCapiDate(block?.firstPublishedDate),
         lastModified: maybeCapiDate(block?.lastModifiedDate),
