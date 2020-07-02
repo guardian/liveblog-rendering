@@ -38,9 +38,9 @@ const Block: FC<Props> = (props) =>
             {date => <PublishDate date={date} />}
         </MaybeRender>
         <main>
-        <MaybeRender option={props.title}>
-            {title => <Title title={title} />}
-        </MaybeRender>
+            <MaybeRender option={props.title}>
+                {title => <Title title={title} />}
+            </MaybeRender>
             {props.children}
         </main>
         <MaybeRender option={props.lastModified}>
