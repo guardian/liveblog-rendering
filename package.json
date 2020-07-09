@@ -11,7 +11,7 @@
     "scripts": {
         "build": "microbundle --jsx React.createElement",
         "dev": "microbundle watch --jsx React.createElement",
-        "storybook": "start-storybook -p 6006",
+        "storybook": "start-storybook -p 6006 --ci",
         "build-storybook": "build-storybook",
         "tsc": "tsc",
         "lint": "eslint . --ext .ts",
@@ -46,7 +46,8 @@
         "prettier": "^2.0.5",
         "pretty-quick": "^2.0.1",
         "react": "^16.13.1",
-        "react-dom": "^16.13.1"
+        "react-dom": "^16.13.1",
+        "ts-loader": "^7.0.5"
     },
     "eslintConfig": {
         "root": true,
@@ -63,11 +64,6 @@
             "plugin:react/recommended",
             "plugin:@typescript-eslint/recommended"
         ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-push": "pretty-quick --staged && yarn lint && yarn tsc && yarn test --watchAll=false"
-        }
     },
     "peerDependencies": {
         "@guardian/src-foundations": "^1.0.1",
